@@ -1,0 +1,10 @@
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/GestioneingressiApplication.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/controllers/ClientiController.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/controllers/IngressiController.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/entities/Cliente.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/entities/Ingresso.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/repositories/ClienteRepository.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/repositories/IngressoRepository.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/security/SecurityConfig.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/services/ClienteService.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/services/IngressoService.java
