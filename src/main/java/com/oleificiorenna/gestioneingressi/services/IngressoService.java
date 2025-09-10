@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import com.oleificiorenna.gestioneingressi.entities.Cliente;
 import com.oleificiorenna.gestioneingressi.entities.Ingresso;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -21,15 +22,19 @@ public class IngressoService {
 
 	@Autowired
 	IngressoRepository ingressoRepository;
-	
+
 	@Autowired
 	ClienteRepository clienteRepository;
-	
-	public List<Ingresso> getAll(){
+
+	public List<Ingresso> getAll() {
 		return ingressoRepository.findAll();
 	}
-	
+
 	public Ingresso save(Ingresso ingresso) {
 		return ingressoRepository.save(ingresso);
+	}
+
+	public void delete(Integer id) {
+		ingressoRepository.deleteById(id);
 	}
 }
