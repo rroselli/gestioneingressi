@@ -29,11 +29,7 @@ public class IngressoService {
 		return ingressoRepository.findAll();
 	}
 	
-	public List<Ingresso> getByIdCliente(Integer idCliente) throws Exception{
-		Optional<Cliente> existingClient = clienteRepository.findById(idCliente);
-		if(existingClient==null || !existingClient.isPresent()) {
-			throw new Exception("Non esiste un cliente con l'id specificato");
-		}
-		return ingressoRepository.findByCliente(existingClient.get());
+	public Ingresso save(Ingresso ingresso) {
+		return ingressoRepository.save(ingresso);
 	}
 }

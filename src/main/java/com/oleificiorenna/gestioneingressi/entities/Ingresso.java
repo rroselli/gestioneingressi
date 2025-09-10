@@ -33,9 +33,8 @@ public class Ingresso {
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER) 
     @JoinColumn(name = "cliente_id", nullable = false)
-    @ToString.Exclude
     private Cliente cliente;
 
     @Column(name = "data_ora_ingresso", nullable = false)

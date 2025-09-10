@@ -2,6 +2,7 @@ package com.oleificiorenna.gestioneingressi.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
@@ -45,7 +46,5 @@ public class Cliente {
     @Column(name = "nome_azienda")
     private String nomeAzienda;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude
-    private List<Ingresso> ingressi;
+    
 }
