@@ -36,6 +36,7 @@ public class ClienteService {
 		List<ClienteDto> res = new ArrayList<ClienteDto>();
 		for(Cliente c: clienti) {
 			ClienteDto cDto = new ClienteDto();
+			cDto.setId(c.getId());
 			cDto.setCodiceFiscalePIVA(c.getCodiceFiscalePIVA());
 			cDto.setCognome(c.getCognome());
 			cDto.setNomeAzienda(c.getNomeAzienda());
