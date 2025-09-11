@@ -42,4 +42,7 @@ public class Ingresso {
 
     @Column(name = "data_ora_uscita")
     private LocalDateTime dataOraUscita;
+    
+    @Column(name="note")
+    private String note;
 }
