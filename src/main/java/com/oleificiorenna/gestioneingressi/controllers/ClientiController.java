@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+
+import com.oleificiorenna.gestioneingressi.dtos.ClienteDto;
+import com.oleificiorenna.gestioneingressi.dtos.GetAllIngressiDto;
 import com.oleificiorenna.gestioneingressi.entities.Cliente;
 import com.oleificiorenna.gestioneingressi.services.ClienteService;
 
@@ -24,9 +27,9 @@ public class ClientiController {
 	@Autowired
 	ClienteService clienteService;
 
-	@GetMapping("/getAll")
-	public List<Cliente> getAll(){
-		return clienteService.findAll();
+	@PostMapping("/getAll")
+	public List<ClienteDto> getAll(@RequestBody GetAllIngressiDto body){
+		return clienteService.findAll(body.getDateFrom(), body.getDateTo());
 	}
 	
 	@GetMapping("/get/{id}")

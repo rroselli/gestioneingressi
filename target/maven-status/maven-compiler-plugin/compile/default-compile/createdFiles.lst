@@ -1,9 +1,11 @@
 com/oleificiorenna/gestioneingressi/repositories/IngressoRepository.class
+com/oleificiorenna/gestioneingressi/dtos/ClienteDto.class
 com/oleificiorenna/gestioneingressi/services/IngressoService.class
 com/oleificiorenna/gestioneingressi/entities/Cliente.class
 com/oleificiorenna/gestioneingressi/services/ClienteService.class
 com/oleificiorenna/gestioneingressi/repositories/ClienteRepository.class
 com/oleificiorenna/gestioneingressi/security/SecurityConfig.class
+com/oleificiorenna/gestioneingressi/dtos/GetAllIngressiDto.class
 com/oleificiorenna/gestioneingressi/controllers/ClientiController.class
 com/oleificiorenna/gestioneingressi/GestioneingressiApplication.class
 com/oleificiorenna/gestioneingressi/controllers/IngressiController.class
