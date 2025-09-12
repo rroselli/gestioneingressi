@@ -19,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
 import com.oleificiorenna.gestioneingressi.dtos.ClienteDto;
 import com.oleificiorenna.gestioneingressi.entities.Cliente;
 import com.oleificiorenna.gestioneingressi.entities.Ingresso;
+import com.oleificiorenna.gestioneingressi.exceptions.BadRequestException;
+import com.oleificiorenna.gestioneingressi.exceptions.ResourceNotFoundException;
 
 @Service
 @Slf4j
@@ -45,14 +47,14 @@ public class ClienteService {
 			if(startDate!=null || endDate !=null) {
 				List<Ingresso> ingressiIntervallo = ingressoRepository.findIngressiInIntervallo(startDate, endDate);
 				for(Ingresso ingresso:ingressiIntervallo) {
-					if(ingresso.getCliente().getId().equals(c.getId())) {
+					if(ingresso.getCliente().getId().equals(c.getId()) && ingresso.getDataOraUscita()!=null) {
 						cDto.setMonteOre(cDto.getMonteOre() + Duration.between(ingresso.getDataOraIngresso(), ingresso.getDataOraUscita()).toHours());
 					}
 				}
 			} else {
 				List<Ingresso> ingressi = ingressoRepository.findByCliente(c);
 				for(Ingresso ingresso:ingressi) {
-					if(ingresso.getCliente().getId().equals(c.getId())) {
+					if(ingresso.getCliente().getId().equals(c.getId()) && ingresso.getDataOraUscita()!=null) {
 						cDto.setMonteOre(cDto.getMonteOre() + Duration.between(ingresso.getDataOraIngresso(), ingresso.getDataOraUscita()).toHours());
 					}
 				}
@@ -65,7 +67,7 @@ public class ClienteService {
 	public Cliente save(Cliente cliente) throws Exception {
 		Optional<Cliente> existingCliente = clienteRepository.findByCodiceFiscalePIVA(cliente.getCodiceFiscalePIVA());
 		if (cliente.getId()== null && existingCliente!= null && existingCliente.isPresent()) {
-			throw new Exception("Esiste già un cliente con lo stesso codice fiscale/partita IVA");
+			throw new BadRequestException("Esiste già un cliente con lo stesso codice fiscale/partita IVA");
 		}
 		return clienteRepository.save(cliente);
 	}
@@ -73,7 +75,7 @@ public class ClienteService {
 	public void delete(Integer id) throws Exception {
 		Optional<Cliente> existingCliente = clienteRepository.findById(id);
 		if (existingCliente == null || !existingCliente.isPresent()) {
-			throw new Exception("Non esiste un cliente con l'id specificato");
+			throw new ResourceNotFoundException("Non esiste un cliente con l'id specificato");
 		}
 		clienteRepository.deleteById(id);
 	}
@@ -81,7 +83,7 @@ public class ClienteService {
 	public Cliente getById(Integer id) throws Exception {
 		Optional<Cliente> existingCliente = clienteRepository.findById(id);
 		if (existingCliente == null || !existingCliente.isPresent()) {
-			throw new Exception("Non esiste un cliente con l'id specificato");
+			throw new ResourceNotFoundException("Non esiste un cliente con l'id specificato");
 		}
 		return existingCliente.get();
 	}
