@@ -6,6 +6,7 @@ com/oleificiorenna/gestioneingressi/services/IngressoService.class
 com/oleificiorenna/gestioneingressi/entities/Cliente.class
 com/oleificiorenna/gestioneingressi/services/ClienteService.class
 com/oleificiorenna/gestioneingressi/exceptions/BadRequestException.class
+com/oleificiorenna/gestioneingressi/services/ExportExcelService.class
 com/oleificiorenna/gestioneingressi/repositories/ClienteRepository.class
 com/oleificiorenna/gestioneingressi/security/SecurityConfig.class
 com/oleificiorenna/gestioneingressi/dtos/GetAllIngressiDto.class

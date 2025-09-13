@@ -12,4 +12,5 @@
 /Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/repositories/IngressoRepository.java
 /Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/security/SecurityConfig.java
 /Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/services/ClienteService.java
+/Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/services/ExportExcelService.java
 /Users/Riccardo.Roselli/Progetti/gestioneingressi/src/main/java/com/oleificiorenna/gestioneingressi/services/IngressoService.java

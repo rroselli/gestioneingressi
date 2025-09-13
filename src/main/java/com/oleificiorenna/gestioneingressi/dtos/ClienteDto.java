@@ -20,5 +20,5 @@ public class ClienteDto {
 
     private String nomeAzienda;
     
-    private Long monteOre;
+    private double monteOre;
 }

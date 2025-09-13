@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class GetAllIngressiDto {
 	
+	private Integer idCliente;
+	
 	private LocalDateTime dateFrom;
 	
 	private LocalDateTime dateTo;

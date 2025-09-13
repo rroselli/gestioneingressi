@@ -1,5 +1,6 @@
 package com.oleificiorenna.gestioneingressi.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,5 +37,13 @@ public class IngressoService {
 
 	public void delete(Integer id) {
 		ingressoRepository.deleteById(id);
+	}
+
+	public List<Ingresso> getIngressiByRange(LocalDateTime dateFrom, LocalDateTime dateTo) {
+		if (dateFrom != null || dateFrom != null) {
+			return ingressoRepository.findIngressiInIntervallo(dateFrom, dateTo);
+		} else {
+			return getAll();
+		}
 	}
 }
